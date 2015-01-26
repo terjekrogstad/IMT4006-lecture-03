@@ -1,0 +1,26 @@
+<h2>WSDL Structure</h2>
+
+<pre>
+    <code class="xml">
+    //Description document:
+    &#x3C;description targetNamespace=&#x22;&#x2026;&#x22;&#x3E;
+
+    //Message formats (schema types):
+      &#x3C;types&#x3E; &#x2026; &#x3C;/types&#x3E;
+
+    //Abstract interface of the service:
+      &#x3C;interface&#x3E;
+        &#x3C;operation&#x3E; &#x2026; &#x3C;/operation&#x3E;+
+      &#x3C;/interface&#x3E;+
+
+    //Binding of these messages to a protocol:
+      &#x3C;binding&#x3E; &#x2026; &#x3C;/binding&#x3E;+
+
+    //Location of the service:
+      &#x3C;service&#x3E;
+        &#x3C;endpoint&#x3E; &#x2026; &#x3C;/endpoint&#x3E;
+      &#x3C;/service&#x3E;
+
+    &#x3C;/description&#x3E;
+    </code>
+</pre>

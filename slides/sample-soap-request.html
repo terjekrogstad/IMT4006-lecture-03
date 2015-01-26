@@ -1,0 +1,25 @@
+<h2>Sample SOAP Request</h2>
+
+<pre>
+    Example:
+    <code class="xml">
+    &#x3C;?xml version=&#x27;1.0&#x27; encoding=&#x27;ISO-8859-1&#x27;?&#x3E;
+    &#x3C;SOAP-ENV:Envelope
+      SOAP-ENV:encodingStyle=
+              &#x27;http://schemas.xmlsoap.org/soap/encoding/&#x27;
+      xmlns:SOAP-ENV=&#x27;http://schemas.xmlsoap.org/soap/envelope/&#x27;
+      xmlns:xsd=&#x27;http://www.w3.org/2001/XMLSchema&#x27;
+      xmlns:xsi=&#x27;http://www.w3.org/2001/XMLSchema-instance&#x27;
+      xmlns:SOAP-ENC=&#x27;http://schemas.xmlsoap.org/soap/encoding/&#x27;
+      xmlns:si=&#x27;http://soapinterop.org/xsd&#x27;&#x3E;
+      &#x3C;SOAP-ENV:Body&#x3E;
+       &#x3C;ns9761:getProductionYear
+               xmlns:ns9761=&#x27;http://tempuri.org&#x27;&#x3E;
+        &#x3C;performerName xsi:type=&#x27;xsd:string&#x27;&#x3E;Pink Floyd
+        &#x3C;/performerName&#x3E;
+        &#x3C;albumName xsi:type=&#x27;xsd:string&#x27;&#x3E;The Wall&#x3C;/albumName&#x3E;
+       &#x3C;/ns9761:getProductionYear&#x3E;
+      &#x3C;/SOAP-ENV:Body&#x3E;
+    &#x3C;/SOAP-ENV:Envelope&#x3E;
+    </code>
+</pre>

@@ -1,0 +1,26 @@
+<h2>SOAP in PHP</h2>
+
+
+<pre>
+    Client example with NuSOAP
+    <code class="php">
+    require('nusoap.php');
+    $client = new soapClient('http://myservice.com/xml/CDdbService.php');
+
+    // Parameters used in the SOAP request
+    $perfName = 'Pink Floyd';
+    $albName  = 'The Wall';
+
+    $paramsAlbum = array('performerName' => $perfName,
+                         'albumName' => $albName);
+       
+    // Marshalling parameters, operation request, unmarshalling return value
+    $result = $client->call( 'getProductionYear', $paramsAlbum );
+    if (!$err = $client->getError()) {
+      // Year of production returned
+      echo 'Production year: ' . $result;
+    } else {
+      echo 'Request failed: ' . $err;
+    }
+    </code>
+</pre>
