@@ -1,0 +1,28 @@
+<h2>Node-Soap Server Code Snippet</h2>
+
+<pre>
+    Example using Node-soap.
+    <code class="javascript">
+  var myService = {
+      MyService: {
+          MyPort: {
+              GetCityWeatherByZIP: function(args) {
+                  var responseData = '';
+
+                  //Do some fancy backend stuff...
+
+                  return responseData;
+              }
+          }
+      }
+  }
+
+  var xml = require('fs').readFileSync('myservice.wsdl', 'utf8'),
+      server = http.createServer(function(request,response) {
+          response.end( "404: Not Found: " + request.url)
+      });
+
+  server.listen(8000);
+  soap.listen(server, '/wsdl', myService, xml);
+    </code>
+</pre>

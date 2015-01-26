@@ -1,0 +1,19 @@
+<h2>Node-Soap Client Code Snippet</h2>
+
+<pre>
+    Example using Node-Soap with a weather service - github.com/vpulim/node-soap
+    <code class="javascript">
+    //Set up SOAP
+    var soap = require( 'soap' );
+    var url =  'http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL';
+    soap.createClient( url, function( err, client ){
+        client.GetCityWeatherByZIP( { ZIP : '10001' }, function( err, result ){
+            if( err ){
+                console.log( err );
+            }else {
+                console.log( result );
+            }
+        });
+    });
+    </code>
+</pre>
