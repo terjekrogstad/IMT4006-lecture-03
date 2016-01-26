@@ -2,25 +2,18 @@
 
 
 <pre>
-    Client example with NuSOAP
+    Client example with <a href="http://php.net/manual/en/book.soap.php" target="_blank">PHP SOAP library</a>
     <code class="php">
-    require('nusoap.php');
-    $client = new soapClient('http://myservice.com/xml/CDdbService.php');
+    //Create the SOAP client
+    $soapclient = new SoapClient('http://www.webservicex.net/globalweather.asmx?WSDL');
 
-    // Parameters used in the SOAP request
-    $perfName = 'Pink Floyd';
-    $albName  = 'The Wall';
+    //Set parameters for request
+    $params = array('CountryName' => 'Spain', 'CityName' => 'Alicante');
 
-    $paramsAlbum = array('performerName' => $perfName,
-                         'albumName' => $albName);
-       
-    // Marshalling parameters, operation request, unmarshalling return value
-    $result = $client->call( 'getProductionYear', $paramsAlbum );
-    if (!$err = $client->getError()) {
-      // Year of production returned
-      echo 'Production year: ' . $result;
-    } else {
-      echo 'Request failed: ' . $err;
-    }
+    //Class method getWeather is derived from WSDL
+    $response = $soapclient->getWeather($params);
+
+    //Print response
+    echo( var_dump( $response  ) );
     </code>
 </pre>
